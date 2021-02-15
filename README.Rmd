@@ -1,0 +1,17 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# ggplot2_gallery
+
+This project contains different examples and experiments related to the creation of plots using the RPackage `ggplot2`. More information about `ggplot2` can be obtained under https://ggplot2.tidyverse.org/.
+
