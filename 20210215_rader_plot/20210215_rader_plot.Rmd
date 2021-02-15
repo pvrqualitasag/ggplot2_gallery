@@ -1,0 +1,50 @@
+---
+title: "Example for Creation of Radar Plot"
+author: "Peter von Rohr"
+date: "2021-02-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Disclaimer
+This document shows an example of a radar plot. 
+
+
+# Reference
+The material in this document is based on https://github.com/ricardo-bion/ggradar
+
+
+# Installation
+
+```
+devtools::install_github("ricardo-bion/ggradar", 
+                          dependencies = TRUE)
+```
+
+
+# Example
+The following example is taken from the reference
+
+```{r}
+library(ggradar)
+library(dplyr)
+library(scales)
+library(tibble)
+
+(mtcars_radar <- mtcars %>% 
+  as_tibble(rownames = "group") %>% 
+  mutate_at(vars(-group), rescale) %>% 
+  tail(4) %>% 
+  select(1:10))
+
+```
+
+The plot is done with
+
+```{r}
+ggradar(mtcars_radar)
+```
+
